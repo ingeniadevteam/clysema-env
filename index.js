@@ -6,7 +6,7 @@ module.exports = async () => {
   try {
     env = await require("./validation")();
   } catch (e) {
-    throw e;
+    throw new Error('"NODE_ENV" must be one of [development, production, test]');
   }
 
   return env;
